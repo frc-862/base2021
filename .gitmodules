@@ -1,0 +1,4 @@
+[submodule "lightning"]
+	path = lightning
+	url = git@github.com:frc-862/lightning.git
+	branch = update-2021
