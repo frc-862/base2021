@@ -1,4 +1,0 @@
-[submodule "lightning"]
-	path = lightning
-    url = https://github.com/frc-862/lightning.git
-	branch = master
