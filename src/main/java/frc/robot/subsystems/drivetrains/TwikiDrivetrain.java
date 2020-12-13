@@ -13,6 +13,7 @@ import com.revrobotics.CANSparkMax.IdleMode;
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.geometry.Pose2d;
+import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics;
 import edu.wpi.first.wpilibj.kinematics.DifferentialDriveWheelSpeeds;
 import edu.wpi.first.wpilibj.Encoder;
@@ -31,7 +32,7 @@ public class TwikiDrivetrain extends NeoDrivetrain {
     Encoder rightEncoder = new Encoder(0, 1);
 
     public TwikiDrivetrain() {
-        super(1, LEFT_1_CAN_ID, RIGHT_1_CAN_ID, Constants.TWIKI, null, null);
+        super(1, LEFT_1_CAN_ID, RIGHT_1_CAN_ID, Constants.TWIKI, () -> new Rotation2d(), () -> 1);
         initMotorDirections();
     }
 
