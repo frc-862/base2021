@@ -54,7 +54,7 @@ public class TwikiContainer extends LightningContainer {
 
   @Override
   protected void configureDefaultCommands() {
-    drivetrain.setDefaultCommand(new VoltDrive(drivetrain, () -> -driver.getY(GenericHID.Hand.kLeft), () -> driver.getX(GenericHID.Hand.kRight)));
+    drivetrain.setDefaultCommand(new VoltDrive(drivetrain, () -> -driver.getY(GenericHID.Hand.kLeft), () -> -driver.getY(GenericHID.Hand.kRight)));
   }
 
   @Override

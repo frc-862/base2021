@@ -6,6 +6,6 @@ Base Project for 2021
 
 ## Notable Changes
 
-- `src/main/java/frc/lightning` is now subtree [here](https://github.com/frc-862/base2021/tree/master/lightning) in root directory
+- `src/main/java/frc/lightning` is now submodule [here](https://github.com/frc-862/base2021/tree/master/lightning) in root directory
   - project [here](https://github.com/frc-862/lightning) on github
 - github actions workflow implemented. builds on commits/PRs to master
