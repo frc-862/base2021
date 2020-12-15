@@ -53,8 +53,8 @@ public class TwikiContainer extends LightningContainer {
 
 	@Override
 	protected void configureSystemTests() {
-		// SystemTest.register(new LeftSideMoves(drivetrain), SystemTest.Priority.HIGH);
-		// SystemTest.register(new RightSideMoves(drivetrain), SystemTest.Priority.HIGH);
+		SystemTest.register(new LeftSideMoves(drivetrain));
+		SystemTest.register(new RightSideMoves(drivetrain));
 	}
 
 	@Override
