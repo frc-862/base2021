@@ -22,6 +22,7 @@ import frc.lightning.subsystems.LightningDrivetrain;
 import frc.lightning.util.RamseteGains;
 import frc.robot.Constants;
 import frc.robot.RobotMap;
+import frc.robot.config.TwikiConfig;
 import frc.lightning.subsystems.NeoDrivetrain;
 
 public class TwikiDrivetrain extends NeoDrivetrain {
@@ -32,7 +33,7 @@ public class TwikiDrivetrain extends NeoDrivetrain {
     Encoder rightEncoder = new Encoder(0, 1);
 
     public TwikiDrivetrain() {
-        super(1, LEFT_1_CAN_ID, RIGHT_1_CAN_ID, Constants.TWIKI, () -> new Rotation2d(), () -> 1);
+        super(new TwikiConfig(), 1, LEFT_1_CAN_ID, RIGHT_1_CAN_ID, Constants.TWIKI, () -> new Rotation2d(), () -> 1);
         initMotorDirections();
     }
 
@@ -46,4 +47,5 @@ public class TwikiDrivetrain extends NeoDrivetrain {
         CANSparkMax.ExternalFollower f = new CANSparkMax.ExternalFollower(0,0);
         getLeftMaster().follow(f, 0);
     }
+    
 }
