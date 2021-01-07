@@ -9,6 +9,7 @@ package frc.robot;
 
 import frc.lightning.LightningRobot;
 import frc.lightning.LightningContainer;
+import frc.robot.containers.QuasarContainer;
 import frc.robot.containers.TwikiContainer;
 
 import java.nio.file.Files;
@@ -19,12 +20,17 @@ public class Robot extends LightningRobot {
     public Robot() { super(getRobot()); }
 
     private static LightningContainer getRobot() {
+        if(isQuasar()) return new QuasarContainer();
         if(isTwiki()) return new TwikiContainer();
         return null;
     }
 
     public static boolean isTwiki() {
         return Files.exists(Paths.get("/home/lvuser/twiki"));
+    }
+
+    public static boolean isQuasar() {
+        return Files.exists(Paths.get("/home/lvuser/quasar"));
     }
 
 }
