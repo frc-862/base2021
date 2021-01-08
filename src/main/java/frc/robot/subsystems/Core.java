@@ -7,13 +7,8 @@
 
 package frc.robot.subsystems;
 
-import com.kauailabs.navx.frc.AHRS;
-
 import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.SPI;
-import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants;
 import frc.robot.RobotMap;
 
 public class Core extends SubsystemBase {
@@ -22,14 +17,14 @@ public class Core extends SubsystemBase {
     // PowerDistributionPanel pdp = new PowerDistributionPanel(0);
     Compressor compressor;
     // PigeonIMU pigeonIMU bird;
-    AHRS navx;
+    //AHRS navx;
 
-    private double[] ypr = new double[3];
+    //private double[] ypr = new double[3];
 
     public Core() {
         setName(name);
         compressor = new Compressor(RobotMap.COMPRESSOR_ID);
-        navx = new AHRS(SPI.Port.kMXP);
+        //navx = new AHRS(SPI.Port.kMXP);
     }
 
     @Override
@@ -37,13 +32,13 @@ public class Core extends SubsystemBase {
         // bird.getYawPitchRoll(ypr);
     }
 
-    public Rotation2d getHeading() { 
-        // return Rotation2d.fromDegrees((((ypr[0]+180)%360)-180));
-        return Rotation2d.fromDegrees(-navx.getAngle()); 
-    }
+    // public Rotation2d getHeading() { 
+    //     // return Rotation2d.fromDegrees((((ypr[0]+180)%360)-180));
+    //     //return Rotation2d.fromDegrees(-navx.getAngle()); 
+    // }
 
     public int resetHeading() {
-        navx.reset();
+        //navx.reset();
         // bird.setYaw(0d);
         return 0;
     }

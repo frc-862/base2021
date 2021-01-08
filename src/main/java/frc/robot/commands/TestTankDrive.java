@@ -2,16 +2,13 @@ package frc.robot.commands;
 
 import java.util.function.DoubleSupplier;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.lightning.LightningConfig;
 import frc.lightning.subsystems.LightningDrivetrain;
 import frc.lightning.util.JoystickFilter;
-import frc.robot.subsystems.drivetrains.QuasarDrivetrain;
 
 public class TestTankDrive extends CommandBase {
 
-    QuasarDrivetrain drivetrain;
+    LightningDrivetrain drivetrain;
     DoubleSupplier left;
     DoubleSupplier right;
     private double deadband = 0.15;
@@ -19,7 +16,7 @@ public class TestTankDrive extends CommandBase {
     private double maxPower = 1.0;
     private final JoystickFilter filter = new JoystickFilter(deadband, minPower, maxPower, JoystickFilter.Mode.CUBED);
 
-    public TestTankDrive(QuasarDrivetrain drivetrain, DoubleSupplier left, DoubleSupplier right) {
+    public TestTankDrive(LightningDrivetrain drivetrain, DoubleSupplier left, DoubleSupplier right) {
         this.drivetrain = drivetrain;
         this.left = left;
         this.right = right;

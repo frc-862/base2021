@@ -4,9 +4,10 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.lightning.LightningConfig;
 import frc.lightning.LightningContainer;
-import frc.lightning.subsystems.DrivetrainLogger;
+import frc.lightning.subsystems.BaseRobotLogger;
+import frc.lightning.subsystems.IMU;
 import frc.lightning.subsystems.LightningDrivetrain;
-import frc.lightning.subsystems.SmartDashDrivetrain;
+import frc.lightning.subsystems.ShuffleboardBaseLogging;
 import frc.robot.JoystickConstants;
 import frc.robot.commands.TestTankDrive;
 import frc.robot.config.QuasarConfig;
@@ -16,9 +17,11 @@ public class QuasarContainer extends LightningContainer {
 
     private static final LightningConfig config = new QuasarConfig();
 
-	private static final QuasarDrivetrain drivetrain = new QuasarDrivetrain();//QuasarDrivetrain.create();
-	//private static final DrivetrainLogger drivetrainLogger = new DrivetrainLogger(drivetrain);
-	//private static final SmartDashDrivetrain smartDashDrivetrain = new SmartDashDrivetrain(drivetrain);
+    private static IMU imu = IMU.navX();
+
+	private static final LightningDrivetrain drivetrain = new QuasarDrivetrain(imu.heading(), imu.zero());
+	private static final BaseRobotLogger drivetrainLogger = new BaseRobotLogger(drivetrain, imu);
+	private static final ShuffleboardBaseLogging smartDashDrivetrain = new ShuffleboardBaseLogging(drivetrain, imu);
 
 	private static final XboxController driver = new XboxController(JoystickConstants.DRIVER);
 	private static final XboxController operator = new XboxController(JoystickConstants.OPERATOR);
