@@ -17,7 +17,7 @@ public class QuasarContainer extends LightningContainer {
 
     private static final LightningConfig config = new QuasarConfig();
 
-    private static IMU imu = IMU.navX();
+    private static final IMU imu = IMU.none(); //navX();
 
 	private static final LightningDrivetrain drivetrain = new QuasarDrivetrain(imu.heading(), imu.zero());
 	private static final BaseRobotLogger drivetrainLogger = new BaseRobotLogger(drivetrain, imu);
@@ -67,6 +67,6 @@ public class QuasarContainer extends LightningContainer {
     public LightningConfig getConfig() { return config; }
 
     @Override
-    public LightningDrivetrain getDrivetrain() { return null; }
+    public LightningDrivetrain getDrivetrain() { return drivetrain; }
     
 }
