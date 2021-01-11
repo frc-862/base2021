@@ -6,21 +6,26 @@ public class QuasarConfig extends LightningConfig {
 
     @Override
     public double getTicsPerRev() {
-        return 2048d; // TODO verify
+        return 2048d;
     }
 
     @Override
     public double getMaxRPM() {
-        return 5700d; // TODO verify
+        return 5700d;
     }
 
     @Override
     public double getWheelDiameterInches() {
-        return 6d; // TODO verify
+        return 6.16d;
     }
 
     @Override
-    public double getGearReduction() {
-        return 15; // TODO verify
+    public double getGearRatio() {
+        return 15; // 15:1
+    }
+
+    @Override
+    public double getTicsPerRevWheel() {
+        return (getTicsPerRev() * getGearRatio());
     }
 }

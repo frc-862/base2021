@@ -5,15 +5,17 @@ import java.util.function.Supplier;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 
 import edu.wpi.first.wpilibj.geometry.Rotation2d;
+import frc.lightning.LightningConfig;
 import frc.lightning.subsystems.CTREDrivetrain;
 import frc.lightning.subsystems.IMU.IMUFunction;
 import frc.robot.Constants;
+import frc.robot.RobotMap;
 
 public class QuasarDrivetrain extends CTREDrivetrain {
 
-    public QuasarDrivetrain(Supplier<Rotation2d> heading, IMUFunction zeroHeading) {
-        super(new TalonFX(1), new TalonFX(4), new TalonFX[]{new TalonFX(2), new TalonFX(3)},
-                new TalonFX[]{new TalonFX(5), new TalonFX(6)}, Constants.QUASAR, heading, zeroHeading);
+    public QuasarDrivetrain(LightningConfig config, Supplier<Rotation2d> heading, IMUFunction zeroHeading) {
+        super(config, new TalonFX(RobotMap.LEFT_1_CAN_ID), new TalonFX(RobotMap.RIGHT_1_CAN_ID), new TalonFX[]{new TalonFX(RobotMap.LEFT_2_CAN_ID), new TalonFX(RobotMap.LEFT_3_CAN_ID)},
+                new TalonFX[]{new TalonFX(RobotMap.RIGHT_2_CAN_ID), new TalonFX(RobotMap.RIGHT_3_CAN_ID)}, Constants.QUASAR, heading, zeroHeading);
         initMotorDirections();
     }
 

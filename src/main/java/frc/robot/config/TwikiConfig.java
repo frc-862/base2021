@@ -20,8 +20,13 @@ public class TwikiConfig extends LightningConfig {
     }
 
     @Override
-    public double getGearReduction() {
+    public double getGearRatio() {
         return 15;
+    }
+
+    @Override
+    public double getTicsPerRevWheel() {
+        return 0;
     }
     
 }
