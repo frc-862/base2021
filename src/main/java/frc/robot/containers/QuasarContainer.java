@@ -7,7 +7,7 @@ import frc.lightning.LightningContainer;
 import frc.lightning.subsystems.BaseRobotLogger;
 import frc.lightning.subsystems.IMU;
 import frc.lightning.subsystems.LightningDrivetrain;
-import frc.lightning.subsystems.ShuffleboardBaseLogging;
+import frc.lightning.subsystems.ShuffleboardBaseRobotDisplay;
 import frc.robot.JoystickConstants;
 import frc.robot.commands.TestTankDrive;
 import frc.robot.config.QuasarConfig;
@@ -21,7 +21,7 @@ public class QuasarContainer extends LightningContainer {
 
 	private static final LightningDrivetrain drivetrain = new QuasarDrivetrain(config, imu.heading(), imu.zero());
 	private static final BaseRobotLogger drivetrainLogger = new BaseRobotLogger(drivetrain, imu);
-	private static final ShuffleboardBaseLogging smartDashDrivetrain = new ShuffleboardBaseLogging(drivetrain, imu);
+	private static final ShuffleboardBaseRobotDisplay smartDashDrivetrain = new ShuffleboardBaseRobotDisplay(drivetrain, imu);
 
 	private static final XboxController driver = new XboxController(JoystickConstants.DRIVER);
 	private static final XboxController operator = new XboxController(JoystickConstants.OPERATOR);

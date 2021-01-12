@@ -10,7 +10,7 @@ import frc.lightning.commands.VoltDrive;
 import frc.lightning.subsystems.BaseRobotLogger;
 import frc.lightning.subsystems.IMU;
 import frc.lightning.subsystems.LightningDrivetrain;
-import frc.lightning.subsystems.ShuffleboardBaseLogging;
+import frc.lightning.subsystems.ShuffleboardBaseRobotDisplay;
 import frc.lightning.testing.SystemTest;
 import frc.robot.JoystickConstants;
 import frc.robot.Robot;
@@ -35,7 +35,7 @@ public class TwikiContainer extends LightningContainer {
 
 	private static final LightningDrivetrain drivetrain = new TwikiDrivetrain(imu.heading(), imu.zero());
 	private static final BaseRobotLogger drivetrainLogger = new BaseRobotLogger(drivetrain, imu);
-	private static final ShuffleboardBaseLogging smartDashDrivetrain = new ShuffleboardBaseLogging(drivetrain, imu);
+	private static final ShuffleboardBaseRobotDisplay smartDashDrivetrain = new ShuffleboardBaseRobotDisplay(drivetrain, imu);
 
 	private static final XboxController driver = new XboxController(JoystickConstants.DRIVER);
 	private static final XboxController operator = new XboxController(JoystickConstants.OPERATOR);
