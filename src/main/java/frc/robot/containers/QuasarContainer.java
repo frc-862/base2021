@@ -4,12 +4,12 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.lightning.LightningConfig;
 import frc.lightning.LightningContainer;
+import frc.lightning.commands.VoltDrive;
 import frc.lightning.subsystems.BaseRobotLogger;
 import frc.lightning.subsystems.IMU;
 import frc.lightning.subsystems.LightningDrivetrain;
 import frc.lightning.subsystems.ShuffleboardBaseRobotDisplay;
 import frc.robot.JoystickConstants;
-import frc.robot.commands.TestTankDrive;
 import frc.robot.config.QuasarConfig;
 import frc.robot.subsystems.drivetrains.QuasarDrivetrain;
 
@@ -45,7 +45,7 @@ public class QuasarContainer extends LightningContainer {
 
     @Override
     protected void configureDefaultCommands() {
-        drivetrain.setDefaultCommand(new TestTankDrive(drivetrain, () -> -driver.getY(GenericHID.Hand.kLeft), () -> -driver.getY(GenericHID.Hand.kRight)));
+        drivetrain.setDefaultCommand(new VoltDrive(drivetrain, () -> -driver.getY(GenericHID.Hand.kLeft), () -> -driver.getY(GenericHID.Hand.kRight)));
     }
 
     @Override
