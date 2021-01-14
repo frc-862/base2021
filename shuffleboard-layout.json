@@ -356,6 +356,32 @@
               "_source0": "network_table:///SmartDashboard/LeftVolts",
               "_title": "LeftVolts"
             }
+          },
+          "3,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///SmartDashboard/FAULT_RIGHT_DRIVETRAIN_OUT_OF_SYNC",
+              "_title": "FAULT_RIGHT_DRIVETRAIN_OUT_OF_SYNC",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
+            }
+          },
+          "4,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///SmartDashboard/FAULT_LEFT_DRIVETRAIN_OUT_OF_SYNC",
+              "_title": "FAULT_LEFT_DRIVETRAIN_OUT_OF_SYNC",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
+            }
           }
         }
       }
@@ -451,7 +477,7 @@
   "windowGeometry": {
     "x": -8.0,
     "y": -8.0,
-    "width": 1936.0,
-    "height": 1066.0
+    "width": 1696.0,
+    "height": 1036.0
   }
 }
