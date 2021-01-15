@@ -3,7 +3,7 @@ package frc.robot.config;
 import frc.lightning.LightningConfig;
 import frc.lightning.util.RamseteGains;
 
-public class TwikiConfig extends LightningConfig {
+public class QuasarConfig extends LightningConfig {
 
     @Override
     public double getTicsPerRev() {
@@ -17,22 +17,22 @@ public class TwikiConfig extends LightningConfig {
 
     @Override
     public double getWheelDiameterInches() {
-        return 3.5d;
+        return 6.16d;
     }
 
     @Override
     public double getGearRatio() {
-        return 15;
+        return 15; // 15:1
     }
 
     @Override
     public double getTicsPerRevWheel() {
-        return 0;
+        return (getTicsPerRev() * getGearRatio());
     }
 
     @Override
     public RamseteGains getRamseteGains() {
-        return new RamseteGains(0.5583711759, // trackWidth
+        return new RamseteGains(0.5583711759, // trackWidth // TODO tune these
                 0.136, // kS
                 2.51, // kV - 254 . . . these numbers must work!
                 0.318, // kA
@@ -45,5 +45,4 @@ public class TwikiConfig extends LightningConfig {
                 5.4d, // maxVelocity (ft/sec)
                 5d); // maxAcceleration (ft/sec^2)
     }
-
 }
