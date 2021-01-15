@@ -13,7 +13,6 @@ import com.revrobotics.*;
 
 import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.Encoder;
-import frc.robot.Constants;
 import frc.robot.config.TwikiConfig;
 import frc.lightning.subsystems.NeoDrivetrain;
 import frc.lightning.subsystems.IMU.IMUFunction;
@@ -26,7 +25,7 @@ public class TwikiDrivetrain extends NeoDrivetrain {
     Encoder rightEncoder = new Encoder(0, 1);
 
     public TwikiDrivetrain(Supplier<Rotation2d> heading, IMUFunction zeroHeading) {
-        super(new TwikiConfig(), 1, LEFT_1_CAN_ID, RIGHT_1_CAN_ID, Constants.TWIKI, heading, zeroHeading);
+        super(new TwikiConfig(), 1, LEFT_1_CAN_ID, RIGHT_1_CAN_ID, heading, zeroHeading);
         initMotorDirections();
     }
 

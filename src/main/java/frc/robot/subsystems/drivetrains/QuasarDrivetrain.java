@@ -8,14 +8,13 @@ import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import frc.lightning.LightningConfig;
 import frc.lightning.subsystems.CTREDrivetrain;
 import frc.lightning.subsystems.IMU.IMUFunction;
-import frc.robot.Constants;
 import frc.robot.RobotMap;
 
 public class QuasarDrivetrain extends CTREDrivetrain {
 
     public QuasarDrivetrain(LightningConfig config, Supplier<Rotation2d> heading, IMUFunction zeroHeading) {
         super(config, new TalonFX(RobotMap.LEFT_1_CAN_ID), new TalonFX(RobotMap.RIGHT_1_CAN_ID), new TalonFX[]{new TalonFX(RobotMap.LEFT_2_CAN_ID), new TalonFX(RobotMap.LEFT_3_CAN_ID)},
-                new TalonFX[]{new TalonFX(RobotMap.RIGHT_2_CAN_ID), new TalonFX(RobotMap.RIGHT_3_CAN_ID)}, Constants.QUASAR, heading, zeroHeading);
+                new TalonFX[]{new TalonFX(RobotMap.RIGHT_2_CAN_ID), new TalonFX(RobotMap.RIGHT_3_CAN_ID)}, heading, zeroHeading);
         initMotorDirections();
     }
 
