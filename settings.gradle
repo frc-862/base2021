@@ -25,6 +25,3 @@ pluginManagement {
         }
     }
 }
-
-//include lightning sub project
-include ':lightning'
