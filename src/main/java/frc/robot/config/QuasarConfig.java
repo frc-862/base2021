@@ -45,4 +45,14 @@ public class QuasarConfig extends LightningConfig {
                 5.4d, // maxVelocity (ft/sec)
                 5d); // maxAcceleration (ft/sec^2)
     }
+
+    @Override
+    public double getOpenLoopRamp() {
+        return 0.15;
+    }
+
+    @Override
+    public double getCloseLoopRamp() {
+        return 0;
+    }
 }

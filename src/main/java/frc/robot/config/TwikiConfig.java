@@ -46,4 +46,14 @@ public class TwikiConfig extends LightningConfig {
                 5d); // maxAcceleration (ft/sec^2)
     }
 
+    @Override
+    public double getOpenLoopRamp() {
+        return 0;
+    }
+
+    @Override
+    public double getCloseLoopRamp() {
+        return 0;
+    }
+
 }
